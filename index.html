@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script>
-      // Get the title and description elements
-      const titleEl = document.querySelector('meta[property="og:title"]');
-      const descEl = document.querySelector('meta[property="og:description"]');
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Website</title>
+</head>
+<body>
 
-      // Update the content of the title and description elements
-      titleEl.setAttribute('content', 'My New Page Title');
-      descEl.setAttribute('content', 'My New Page Description');
-    </script>
-    <meta charset="UTF-8">
-    <title>My Website</title>
-    <meta name="description" content="My website description">
+  <!-- Content of your website here -->
 
-    <!-- Open Graph metadata -->
-    <meta property="og:title" content="My Website">
-    <meta property="og:description" content="My website description">
-    <meta property="og:image" content="https://example.com/my-image.jpg">
-    <meta property="og:url" content="https://example.com">
-  </head>
-  <body>
-    <h1>Welcome to My Website</h1>
+  <script>
+    // Create and add Open Graph metadata tags to the <head> element
+    const head = document.querySelector('head');
     
-    <!-- JavaScript code to update Open Graph metadata -->
-  </body>
+    const title = document.createElement('meta');
+    title.setAttribute('property', 'og:title');
+    title.setAttribute('content', 'My Website Title');
+    head.appendChild(title);
+    
+    const description = document.createElement('meta');
+    description.setAttribute('property', 'og:description');
+    description.setAttribute('content', 'My Website Description');
+    head.appendChild(description);
+    
+    const image = document.createElement('meta');
+    image.setAttribute('property', 'og:image');
+    image.setAttribute('content', 'https://example.com/my-image.jpg');
+    head.appendChild(image);
+    
+    const url = document.createElement('meta');
+    url.setAttribute('property', 'og:url');
+    url.setAttribute('content', 'https://example.com');
+    head.appendChild(url);
+  </script>
+</body>
 </html>
